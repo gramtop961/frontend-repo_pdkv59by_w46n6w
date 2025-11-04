@@ -10,13 +10,13 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6 }}
-          className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900/60 to-slate-900/30 p-8 backdrop-blur-md md:p-12"
+          className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900/70 to-slate-900/30 p-8 backdrop-blur-md md:p-12"
         >
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Let’s collaborate
-          </h2>
+          {/* highlight */}
+          <span className="pointer-events-none absolute -left-1/2 top-0 h-1 w-[200%] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Let’s collaborate</h2>
           <p className="mt-3 max-w-2xl text-slate-300">
-            Open to full-time roles and selective freelance—especially within healthcare, biotech, and wellness. I can share full case studies on request.
+            Open to full-time roles and selective freelance—especially in healthcare, biotech, and wellness. I can share full case studies on request.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
@@ -43,7 +43,7 @@ const Contact = () => {
 
         <div className="mt-8 flex flex-col items-center justify-between gap-3 text-sm text-slate-400 md:flex-row">
           <p>© {new Date().getFullYear()} Nanda Aisyah Pratiwi. All rights reserved.</p>
-          <p className="text-slate-500">Designed with care • Built for clarity</p>
+          <p className="text-slate-500">Matte black, warm glow, clear outcomes.</p>
         </div>
       </div>
     </section>

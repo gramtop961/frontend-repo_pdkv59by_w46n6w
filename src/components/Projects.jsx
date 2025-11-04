@@ -38,12 +38,17 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.05 * i }}
-              className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 p-5 backdrop-blur-md"
+              className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 p-5 backdrop-blur-md"
             >
-              <div className="h-40 w-full rounded-xl bg-gradient-to-br from-slate-300/40 via-slate-200/30 to-zinc-300/20 shadow-inner shadow-white/10 transition duration-300 group-hover:scale-[1.02]" />
+              {/* metallic placeholder visual */}
+              <div className="relative h-44 w-full overflow-hidden rounded-xl">
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-slate-300/40 via-slate-200/25 to-zinc-300/20 shadow-inner shadow-white/10 transition duration-500 group-hover:scale-[1.03]" />
+                {/* sheen */}
+                <span className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 transition duration-700 group-hover:left-full group-hover:opacity-100" />
+              </div>
               <div className="mt-4 flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-slate-100">{p.title}</h3>
-                <span className="text-sm text-slate-300 transition group-hover:translate-x-0.5">→</span>
+                <span className="text-sm text-orange-400/90 transition group-hover:translate-x-0.5">→</span>
               </div>
               <div className="mt-2 flex flex-wrap gap-2">
                 {p.tags.map((t) => (
@@ -55,6 +60,8 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
+              {/* orange corner glow */}
+              <span className="pointer-events-none absolute right-2 top-2 h-2 w-2 rounded-full bg-orange-400/80 blur-[2px]" />
             </motion.div>
           ))}
         </div>
